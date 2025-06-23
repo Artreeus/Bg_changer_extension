@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .color-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .color-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .custom-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .custom-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .custom-input {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        #customColor {
+            flex: 1;
+            height: 35px;
+            border: none;
+            border-radius: 6px;
+            background: white;
+        }
+        
+        .apply-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.2s ease;
+        }
+        
+        .apply-btn:hover {
+            background: #45a049;
+        }
+        
+        .reset-btn {
+            width: 100%;
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+        
+        .reset-btn:hover {
+            background: #da190b;
+        }
+        
+        .current-color {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>🎨 Color Changer</h2>
+    </div>
+    
+    <div class="color-grid">
+        <button class="color-btn" style="background: #ffffff" data-color="#ffffff" title="White"></button>
+        <button class="color-btn" style="background: #f0f0f0" data-color="#f0f0f0" title="Light Gray"></button>
+        <button class="color-btn" style="background: #333333" data-color="#333333" title="Dark Gray"></button>
+        <button class="color-btn" style="background: #000000" data-color="#000000" title="Black"></button>
+        
+        <button class="color-btn" style="background: #ff6b6b" data-color="#ff6b6b" title="Red"></button>
+        <button class="color-btn" style="background: #4ecdc4" data-color="#4ecdc4" title="Teal"></button>
+        <button class="color-btn" style="background: #45b7d1" data-color="#45b7d1" title="Blue"></button>
+        <button class="color-btn" style="background: #96ceb4" data-color="#96ceb4" title="Green"></button>
+        
+        <button class="color-btn" style="background: #feca57" data-color="#feca57" title="Yellow"></button>
+        <button class="color-btn" style="background: #ff9ff3" data-color="#ff9ff3" title="Pink"></button>
+        <button class="color-btn" style="background: #a29bfe" data-color="#a29bfe" title="Purple"></button>
+        <button class="color-btn" style="background: #fd79a8" data-color="#fd79a8" title="Rose"></button>
+    </div>
+    
+    <div class="custom-section">
+        <label for="customColor">Custom Color:</label>
+        <div class="custom-input">
+            <input type="color" id="customColor" value="#ffffff">
+            <button class="apply-btn" id="applyCustom">Apply</button>
+        </div>
+    </div>
+    
+    <button class="reset-btn" id="resetColor">Reset to Original</button>
+    
+    <div class="current-color" id="currentColor">
+        Current: Default
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
